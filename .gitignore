@@ -1,0 +1,23 @@
+# Ignore virtual environment
+venv/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+
+# Django migration backups
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+
+# VS Code / Editor settings
+.vscode/
+.idea/
