@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
+    'corsheaders', 
 ]
 
 MIDDLEWARE = [
@@ -122,3 +124,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True  # For development
+# Or for production: CORS_ALLOWED_ORIGINS = ['https://your-domain.com']
+
+# Add environment variables at the bottom
+import os
+CAT_FACT_API_URL = os.getenv('CAT_FACT_API_URL', 'https://catfact.ninja/fact')
+CAT_FACT_TIMEOUT = int(os.getenv('CAT_FACT_TIMEOUT', '5'))
